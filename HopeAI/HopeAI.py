@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
-Logistic=joblib.load(r"C:\Users\user\Desktop\SDK\Project\projectMidML\logistic_regression.pkl")
-random_forest=joblib.load(r"C:\Users\user\Desktop\SDK\Project\projectMidML\random_forset.plk")
-decision_tree=joblib.load(r"C:\Users\user\Desktop\SDK\Project\projectMidML\decision_tree_classifier.plk")
-svm=joblib.load(r"C:\Users\user\Desktop\SDK\Project\projectMidML\support_vector_classifier.plk")
+Logistic=joblib.load(r"logistic_regression.pkl")
+random_forest=joblib.load(r"random_forset.plk")
+decision_tree=joblib.load(r"decision_tree_classifier.plk")
+svm=joblib.load(r"support_vector_classifier.plk")
 st.title("Smart System for Academic Mental Health Monitoring")
 
 model_option=st.sidebar.radio("Chosse the Model",["Logistic Regression","Random Forest","Decision Tree","Support Vector Classifier","Metrics"])
@@ -81,6 +81,7 @@ elif model_option=="Support Vector Classifier":
              st.success(f"The predicted depression status is: not depressed")
 elif model_option=="Metrics":
     if st.button("Show the Metrics"):
-        st.table(pd.read_csv(r"C:\Users\user\Desktop\SDK\Project\projectMidML\Accuracy.csv"))
-        st.table(pd.read_csv(r"C:\Users\user\Desktop\SDK\Project\projectMidML\classification_report.csv"))
-        st.table(pd.read_csv(r"C:\Users\user\Desktop\SDK\Project\projectMidML\confusion_matrix.csv"))
+        st.table(pd.read_csv(r"Accuracy.csv"))
+        st.table(pd.read_csv(r"classification_report.csv"))
+        st.table(pd.read_csv(r"confusion_matrix.csv"))
+
