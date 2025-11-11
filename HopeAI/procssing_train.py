@@ -50,9 +50,9 @@ y_pred_dt=dt_model.predict(x_test)
 y_pred_svm=svm_model.predict(x_test)
 # upload model
 joblib.dump(lg_model,"logistic_regression.pkl")
-joblib.dump(rf_model,"random_forset.plk")
-joblib.dump(dt_model,"decision_tree_classifier.plk")
-joblib.dump(svm_model,"support_vector_classifier.plk")
+joblib.dump(rf_model,"random_forset.pkl")
+joblib.dump(dt_model,"decision_tree_classifier.pkl")
+joblib.dump(svm_model,"support_vector_classifier.pkl")
 
 # metrics : accuracy_score , classification_report , confusion_matrix in all model
 acc_lg=accuracy_score(y_test, y_pred_lg)
@@ -116,3 +116,4 @@ confusion_matrix=pd.DataFrame({
 Accuracy.to_csv("Accuracy.csv",index=False)
 classification_report.to_csv("classification_report.csv",index=False)
 confusion_matrix.to_csv("confusion_matrix.csv",index=False)
+
