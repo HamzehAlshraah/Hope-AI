@@ -9,8 +9,8 @@ st.write("📂 Current working directory:", os.getcwd())
 st.write("📄 Files in this folder:", os.listdir())
 st.write("📄 Files in this folder:", os.listdir("HopeAI"))
 
-Logistic=joblib.load(r"HopeAI\logistic_regression.pkl")
-random_forest=joblib.load(r"HopeAI\random_forset.pkl")
+Logistic=joblib.load("HopeAI\logistic_regression.pkl")
+random_forest=joblib.load("HopeAI\random_forset.pkl")
 decision_tree=joblib.load(r"HopeAI\decision_tree_classifier.pkl")
 svm=joblib.load(r"HopeAI\support_vector_classifier.pkl")
 st.title("Smart System for Academic Mental Health Monitoring")
@@ -90,6 +90,7 @@ elif model_option=="Metrics":
         st.table(pd.read_csv(r"Accuracy.csv"))
         st.table(pd.read_csv(r"classification_report.csv"))
         st.table(pd.read_csv(r"confusion_matrix.csv"))
+
 
 
 
