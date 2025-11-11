@@ -3,11 +3,31 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
-import os, streamlit as st
+import os, streamlit as st, joblib
 
+# عرض المسار الحالي
 st.write("📂 Current working directory:", os.getcwd())
-st.write("📄 Files in this folder:", os.listdir())
-st.write("📄 Files in this folder:", os.listdir("HopeAI"))
+
+# عرض الملفات في المجلد الحالي
+st.write("📄 Files in current folder:", os.listdir())
+
+# عرض الملفات داخل مجلد HopeAI (إذا موجود)
+if os.path.exists("HopeAI"):
+    st.write("📁 Files inside 'HopeAI':", os.listdir("HopeAI"))
+else:
+    st.write("⚠️ Folder 'HopeAI' not found!")
+
+# اسم الملف المطلوب
+model_path = "HopeAI/logistic_regression.pkl"
+
+# التحقق من وجود الملف بالمسار
+if os.path.exists(model_path):
+    st.success(f"✅ Found model file: {model_path}")
+    Logistic = joblib.load(model_path)
+    st.success("🎉 Model loaded successfully!")
+else:
+    st.error(f"❌ File not found: {model_path}")
+    st.stop()
 
 Logistic=joblib.load("HopeAI\logistic_regression.pkl")
 random_forest=joblib.load("HopeAI\random_forset.pkl")
@@ -90,6 +110,7 @@ elif model_option=="Metrics":
         st.table(pd.read_csv(r"Accuracy.csv"))
         st.table(pd.read_csv(r"classification_report.csv"))
         st.table(pd.read_csv(r"confusion_matrix.csv"))
+
 
 
 
