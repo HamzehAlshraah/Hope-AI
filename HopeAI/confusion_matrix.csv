@@ -1,0 +1,9 @@
+Model,Confusion Matrix
+Logistic Regression,"[[ 7267  1968]
+ [ 1510 11576]]"
+Random Forest,"[[ 6896  2339]
+ [ 1416 11670]]"
+Decision Tree,"[[ 6267  2968]
+ [ 1243 11843]]"
+SVM,"[[ 7058  2177]
+ [ 1490 11596]]"
