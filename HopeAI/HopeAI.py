@@ -82,9 +82,10 @@ elif model_option=="Support Vector Classifier":
              st.success(f"The predicted depression status is: not depressed")
 elif model_option=="Metrics":
     if st.button("Show the Metrics"):
-        st.table(pd.read_csv(r"Accuracy.csv"))
-        st.table(pd.read_csv(r"classification_report.csv"))
-        st.table(pd.read_csv(r"confusion_matrix.csv"))
+        st.table(pd.read_csv(r"HopeAI/Accuracy.csv"))
+        st.table(pd.read_csv(r"HopeAI/classification_report.csv"))
+        st.table(pd.read_csv(r"HopeAI/confusion_matrix.csv"))
+
 
 
 
