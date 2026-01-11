@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
-Logistic=joblib.load(r"logistic_regression.pkl")
+Logistic=joblib.load("logistic_regression.pkl")
 random_forest=joblib.load(r"random_forset.pkl")
 decision_tree=joblib.load(r"decision_tree_classifier.pkl")
 svm=joblib.load(r"support_vector_classifier.pkl")
@@ -92,3 +92,4 @@ elif model_option=="Metrics":
         st.table(pd.read_csv(r"C:\Users\user\Desktop\SDK\Project\HopeAI\Accuracy.csv"))
         st.table(pd.read_csv(r"C:\Users\user\Desktop\SDK\Project\HopeAI\classification_report.csv"))
         st.table(pd.read_csv(r"C:\Users\user\Desktop\SDK\Project\HopeAI\confusion_matrix.csv"))
+
